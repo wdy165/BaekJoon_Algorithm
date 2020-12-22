@@ -11,7 +11,6 @@ public class Main {
 		int N = Integer.valueOf(br.readLine());
 
 		Queue<Integer> q = new LinkedList<Integer>();
-		StringBuilder sb = new StringBuilder();
 		
 		if(N >= 1 && N <= 500000) {
 			for(int i = 1; i <= N; i++) {
@@ -19,14 +18,15 @@ public class Main {
 			}
 		}
 		
+		int num = 0;
 		while(!q.isEmpty()) {
+			num = q.peek();
 			q.poll();
-			if(q.size() == 1) {
-				sb.append(q.peek());
-				break;
+			if(!q.isEmpty()) {
+				q.offer(q.peek());
+				q.poll();
 			}
-			q.offer(q.poll());
 		}
-		System.out.println(sb.toString());
+		System.out.println(num);
 	}
 }
