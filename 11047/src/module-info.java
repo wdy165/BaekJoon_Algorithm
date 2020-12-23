@@ -1,0 +1,2 @@
+module Coin0 {
+}
