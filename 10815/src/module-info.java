@@ -1,0 +1,2 @@
+module BS_Card {
+}
